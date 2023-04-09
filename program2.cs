@@ -1,49 +1,37 @@
-//First exercise
+// the second exercise
 
-Console.WriteLine("enter the size of an array, preferably less than 10 so that it could be tested easily: ");
-int size = int.Parse(Console.ReadLine());
+//First Array
+Console.WriteLine("enter the size of the first array: ");
+int size1 = int.Parse(Console.ReadLine());
 
-int[] array = new int[size];
+int[] array1 = new int[size1];
 
-Console.WriteLine("Now write the elements of your array: ");
+Console.WriteLine("Now write the elements of your first array: ");
 
-for (int i = 0; i < size; i++)
+for (int i = 0; i < size1; i++)
 {
-    array[i] = int.Parse(Console.ReadLine());
+    array1[i] = int.Parse(Console.ReadLine());
 }
 
+//Second Array
+Console.WriteLine("enter the size of your second array: ");
+int size2 = int.Parse(Console.ReadLine());
 
-int sumOddNumb = 0;
-int prodEvenNumb = 1;
-foreach (int element in array)
+int[] array2 = new int[size2];
+
+Console.WriteLine("Now write the elements of your second array: ");
+
+for (int i = 0; i < size2; i++)
 {
-    if (element % 2 == 0)
-    {
-        sumOddNumb += element;
-    }
-    else
-    {
-        prodEvenNumb *= element;
-    }
+    array2[i] = int.Parse(Console.ReadLine());
 }
 
-Dictionary<int, int> counts = new Dictionary<int, int>();
-
-foreach (int element in array)
+//comparing
+if (array1.Length != array2.Length)
 {
-    if (counts.ContainsKey(element))
-    {
-        counts[element]++;
-    }
-    else
-    {
-        counts[element] = 1;
-    }
+    Console.WriteLine("These arrays are not equal");
 }
-
-Console.WriteLine($"There are {sumOddNumb} odd and {prodEvenNumb} even numbers");
-
-foreach (KeyValuePair<int, int> pair in counts)
+else
 {
-    Console.WriteLine($"Element {pair.Key} occurs {pair.Value} times.");
+    Console.WriteLine("These arrays are  equal");
 }
