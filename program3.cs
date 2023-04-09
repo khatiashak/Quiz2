@@ -1,4 +1,4 @@
-The third exercise
+//The third exercise
 int[] array = { 0, 99, 26, 31, 3, 3, 41, 41, 41, 4, 5 };
 
 int currentCount = 1;
