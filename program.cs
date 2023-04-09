@@ -1,6 +1,6 @@
 //First exercise
 
-Console.WriteLine("enter the size of an array, preferably less than 10 so that it could be tested easily: ");
+Console.WriteLine("enter the size of an array: ");
 int size = int.Parse(Console.ReadLine());
 
 int[] array = new int[size];
