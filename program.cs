@@ -13,37 +13,35 @@ for (int i = 0; i < size; i++)
 }
 
 
-int sumOddNumb = 0;
-int prodEvenNumb = 1;
-foreach (int element in array)
+int sumOfOdds = 0;
+int productOfEvens = 1;
+Dictionary<int, int> elementCounts = new Dictionary<int, int>();
+
+foreach (int num in array)
 {
-    if (element % 2 == 0)
+    if (num % 2 == 0)
     {
-        sumOddNumb += element;
+        productOfEvens *= num;
     }
     else
     {
-        prodEvenNumb *= element;
+        sumOfOdds += num;
     }
-}
 
-Dictionary<int, int> counts = new Dictionary<int, int>();
-
-foreach (int element in array)
-{
-    if (counts.ContainsKey(element))
+    if (elementCounts.ContainsKey(num))
     {
-        counts[element]++;
+        elementCounts[num]++;
     }
     else
     {
-        counts[element] = 1;
+        elementCounts[num] = 1;
     }
 }
 
-Console.WriteLine($"There are {sumOddNumb} odd and {prodEvenNumb} even numbers");
+Console.WriteLine($"Sum of odd numbers in this array is {sumOfOdds}, Product of even numbers {productOfEvens}");
 
-foreach (KeyValuePair<int, int> pair in counts)
+Console.WriteLine("each element counts:");
+foreach (KeyValuePair<int, int> entry in elementCounts)
 {
-    Console.WriteLine($"Element {pair.Key} occurs {pair.Value} times.");
+    Console.WriteLine(entry.Key + ": " + entry.Value);
 }
